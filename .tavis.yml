@@ -1,0 +1,22 @@
+env:
+  - VER=v1.10.2
+script:
+  - wget https://github.com/boot2docker/boot2docker/releases/download/v1.10.2/boot2docker.iso
+after_success: |
+	if [ -n "$GITHUB_API_KEY" ]; then
+    git config --gloal user.name "travis_auto"
+    git config --gloal user.email "qinka@live.com"
+    cd ~
+    git clone https://qinka:$GITHUB_API_KEY@github.com/GetBoot2Docker.git
+    cd GetBoot2Docker
+    export RELHELP=$(pwd)
+    cd "$TRAVIS_BUILD_DIR"
+    cp *.iso $RELHELP
+    cd $RELHELP
+    git add .
+    git commit -am"$(date)"
+    git push origin master
+    cd ~
+    sudo rm -rf $RELHELP
+    cd "$TRAVIS_BUILD_DIR"
+  fi
