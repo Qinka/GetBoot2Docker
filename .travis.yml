@@ -3,7 +3,7 @@ env:
 script:
   - wget https://github.com/boot2docker/boot2docker/releases/download/v1.10.2/boot2docker.iso
 after_success: |
-	if [ -n "$GITHUB_API_KEY" ]; then
+  if [ -n "$GITHUB_API_KEY" ]; then
     git config --gloal user.name "travis_auto"
     git config --gloal user.email "qinka@live.com"
     cd ~
