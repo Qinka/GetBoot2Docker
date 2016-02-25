@@ -7,7 +7,7 @@ after_success: |
     git config --global user.name "travis_auto"
     git config --global user.email "qinka@live.com"
     cd ~
-    git clone https://qinka:$GITHUB_API_KEY@github.com/GetBoot2Docker.git
+    git clone https://qinka:$GITHUB_API_KEY@github.com/Qinka/GetBoot2Docker.git
     cd GetBoot2Docker
     export RELHELP=$(pwd)
     cd "$TRAVIS_BUILD_DIR"
