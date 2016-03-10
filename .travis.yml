@@ -11,7 +11,7 @@ after_success: |
     cd GetBoot2Docker
     export RELHELP=$(pwd)
     cd "$TRAVIS_BUILD_DIR"
-    cp *.iso $RELHELP
+    cp * $RELHELP
     cd $RELHELP
     git add .
     git commit -am"$(date)"
