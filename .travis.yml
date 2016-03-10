@@ -1,7 +1,7 @@
 env:
   - VER=v1.10.2
 script:
-  - wget "https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-3.2.3-signed.msi?_ga=1.206481363.1984634701.1457430571"
+  - wget "https://github.com/commercialhaskell/stack/releases/download/v1.0.4/stack-1.0.4-osx-x86_64.tar.gz"
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
     git config --global user.name "travis_auto"
